@@ -1,7 +1,13 @@
+# Scott Crawshaw
+# 2/12/19
+# system.py
+# Submission for Lab 2
+
 from math import sqrt
 
+
 class System:
-    GRAVITY = 6.67384E-11
+    GRAVITY = 6.67384E-11  # gravitational constant
 
     def __init__(self, body_list):
         self.bodies = body_list
@@ -17,14 +23,17 @@ class System:
             body.update_position(timestep)
 
     def calculate_acceleration(self, obj):
+        # returns the total x and y acceleration on a given body
         ax = 0
         ay = 0
 
         for body in self.bodies:
             if body.x != obj.x or body.y != obj.y:
+                # adds up the accelerations due to all other bodies
                 numerator = System.GRAVITY * body.mass
-                distance = self.get_r(obj, body)
+                distance = self.get_distance(obj, body)
                 denominator = distance ** 2
+
                 acceleration = numerator / denominator
                 partial_ax, partial_ay = self.get_accel_components(acceleration, distance, obj, body)
                 ax += partial_ax
@@ -32,7 +41,8 @@ class System:
 
         return ax, ay
 
-    def get_r(self, body1, body2):
+    def get_distance(self, body1, body2):
+        # returns the distance between two bodies
         dy = body2.y - body1.y
         dx = body2.x - body1.x
 
@@ -41,6 +51,7 @@ class System:
         return distance
 
     def get_accel_components(self, acceleration, distance, body1, body2):
+        # return the x and y components of a given acceleration between two bodies
         dy = body2.y - body1.y
         dx = body2.x - body1.x
 

@@ -1,6 +1,7 @@
+# Scott Crawshaw
+# 2/12/19
 # earthmoon.py
-# Example for CS 1 Lab Assignment 2.
-# db, thc; 2011-2016
+# Submission for Lab 2. I did not edit earthmoon.py
 
 from body import Body
 from cs1lib import *
@@ -14,7 +15,6 @@ PIXELS_PER_METER = 3 / 1e7  # distance scale for the simulation
 
 FRAMERATE = 30  # frames per second
 TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
-
 
 def main():
     set_clear_color(0, 0, 0)  # black background
@@ -30,7 +30,6 @@ def main():
 
 earth = Body(5.9736e24, 0, 0, 0, 0, 24, 0, 0, 1)  # blue earth
 moon = Body(7.3477e22, 3.84403e8, 0, 0, 1022, 4, 1, 1, 1)  # white moon
-
 earth_moon = System([earth, moon])
 
 start_graphics(main, 2400, framerate=FRAMERATE)

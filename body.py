@@ -1,6 +1,13 @@
+# Scott Crawshaw
+# 2/12/19
+# body.py
+# Submission for Lab 2
+
 from cs1lib import *
 
+
 class Body:
+
     def __init__(self, mass, x, y, vx, vy, pixel_radius, r, g, b):
         self.mass = mass
         self.x = x
@@ -13,6 +20,7 @@ class Body:
         self.blue = b
 
     def draw(self, cx, cy, pixels_per_meter):
+        # cx and cy are the coordinates of the center of the screen
         disable_stroke()
         set_fill_color(self.red, self.green, self.blue)
         draw_circle(cx + self.x * pixels_per_meter, cy + self.y * pixels_per_meter, self.radius)
