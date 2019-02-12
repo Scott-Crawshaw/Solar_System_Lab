@@ -12,10 +12,10 @@ class Body:
         self.green = g
         self.blue = b
 
-    def draw(self):
+    def draw(self, cx, cy, pixels_per_meter):
         disable_stroke()
         set_fill_color(self.red, self.green, self.blue)
-        draw_circle(self.x, self.y, self.radius)
+        draw_circle(cx + self.x * pixels_per_meter, cy + self.y * pixels_per_meter, self.radius)
 
     def update_velocity(self, ax, ay, timestep):
         self.vx += (ax * timestep)

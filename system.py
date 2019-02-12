@@ -3,18 +3,18 @@ from math import sqrt
 class System:
     GRAVITY = 6.67384E-11
 
-    def __init__(self, body_list, timestep=1):
+    def __init__(self, body_list):
         self.bodies = body_list
-        self.timestep = timestep
 
-    def draw(self):
+    def draw(self, cx, cy, pixels_per_meter):
         for body in self.bodies:
-            body.draw()
+            body.draw(cx, cy, pixels_per_meter)
 
-    def update(self):
+    def update(self, timestep):
         for body in self.bodies:
             ax, ay = self.calculate_acceleration(body)
-            body.update_velocity(ax, ay, self.timestep)
+            body.update_velocity(ax, ay, timestep)
+            body.update_position(timestep)
 
     def calculate_acceleration(self, obj):
         ax = 0
