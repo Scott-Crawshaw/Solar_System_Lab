@@ -37,8 +37,7 @@ def release(x, y):
 
     pressed = False
 
-    mass = 3.30e23 * (10 ** (new_planet_size / 6))
-    print(mass)
+    mass = 3.30e23 * (10 ** (new_planet_size / 6))  # trial and error
 
     distance_from_sun = sqrt((x - (WINDOW_WIDTH / 2)) ** 2 + (y - (WINDOW_HEIGHT / 2)) ** 2) / PIXELS_PER_METER
 
@@ -63,7 +62,7 @@ def release(x, y):
 def planet_preview():
     global new_planet_size
 
-    new_planet_size = (time() - press_time) ** 2
+    new_planet_size = (time() - press_time) ** 2  # trial and error
     draw_circle(press_coords[0], press_coords[1], new_planet_size)
 
 
@@ -90,6 +89,7 @@ mars = Body(6.42e23, 2.279e11, 0, 0, -24100, 4, 1, 0, 0)
 
 solar = System([sun, mercury, venus, earth, mars])
 
+# added these variables for interactive planet creating functionality
 press_time = None
 press_coords = []
 pressed = False
