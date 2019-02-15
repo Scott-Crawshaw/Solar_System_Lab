@@ -29,7 +29,7 @@ def main():
 
 
 earth = Body(5.9736e24, 0, 0, 0, 0, 24, 0, 0, 1)  # blue earth
-moon = Body(7.3477e22, 3.84403e8, 0, 0, 1022, 4, 1, 1, 1)  # white moon
+moon = Body(7.3477e22, 3.84403e8, 0, 0, -1022, 4, 1, 1, 1)  # white moon
 earth_moon = System([earth, moon])
 
 start_graphics(main, 2400, framerate=FRAMERATE)
