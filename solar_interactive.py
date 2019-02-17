@@ -26,10 +26,10 @@ TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
 def press(x, y):
     global press_time, pressed, press_coords, new_planet_size
 
-    press_time = time()
+    press_time = time() - 1
     pressed = True
     press_coords = [x, y]
-    new_planet_size = 0
+    new_planet_size = 1
 
 
 def release(x, y):
@@ -93,7 +93,7 @@ solar = System([sun, mercury, venus, earth, mars])
 press_time = None
 press_coords = []
 pressed = False
-new_planet_size = 0
+new_planet_size = 1
 
 start_graphics(main, 2400, framerate=FRAMERATE, height=WINDOW_HEIGHT, width=WINDOW_WIDTH, mouse_press=press,
                mouse_release=release)
