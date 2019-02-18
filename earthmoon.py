@@ -1,7 +1,7 @@
 # Scott Crawshaw
-# 2/12/19
+# 2/17/19
 # earthmoon.py
-# Submission for Lab 2. I did not edit earthmoon.py
+# Submission for Lab 2
 
 from body import Body
 from cs1lib import *

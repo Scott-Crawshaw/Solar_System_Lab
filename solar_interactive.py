@@ -19,7 +19,7 @@ GRAVITY = 6.67384E-11  # gravitational constant
 TIME_SCALE = 1000000  # real seconds per simulation second
 PIXELS_PER_METER = 3 / 2.5e9  # distance scale for the simulation
 
-FRAMERATE = 30  # frames per second
+FRAMERATE = 100  # frames per second
 TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
 
 

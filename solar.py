@@ -1,7 +1,8 @@
 # Scott Crawshaw
-# 2/12/19
+# 2/17/19
 # solar.py
 # Submission for Lab 2. Modified version of earthmoon.py
+# Kelly Zeilman and I had a general conversation about how one would build the function that computes acceleration
 
 from body import Body
 from cs1lib import *
@@ -13,7 +14,7 @@ WINDOW_HEIGHT = 650
 TIME_SCALE = 1000000  # real seconds per simulation second
 PIXELS_PER_METER = 3 / 2.5e9  # distance scale for the simulation
 
-FRAMERATE = 30  # frames per second
+FRAMERATE = 100  # frames per second
 TIMESTEP = 1.0 / FRAMERATE  # time between drawing each frame
 
 
